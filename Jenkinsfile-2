@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'Agent-Linux' } 
+  agent { node { label 'Agent-Linux' } 
         stages {
           stage('Back-end') {
             agent {
@@ -19,4 +19,5 @@ pipeline {
             }
           }
         }
+       } 
 }
