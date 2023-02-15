@@ -1,15 +1,13 @@
 pipeline {
-          agent {
-                  label 'Agent-Linux'
-                  docker { image 'node:16-alpine' }
-          }        
-                  
+          agent { label 'Agent-Linux' }  
                   stages {
                       stage('Test') {
+                           agent {
+                                 docker { image 'node:16-alpine' }
+                           }
                            steps {
                               sh 'node --version'
                            }   
                       }        
                   }
-          
 }
