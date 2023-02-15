@@ -1,7 +1,7 @@
 pipeline {
-  node { 
-        label 'Agent-Linux' {  
           agent {
+                  label 'Agent-Linux'
+          }        
                   docker { image 'node:16-alpine' }
                   stages {
                       stage('Test') {
@@ -10,7 +10,5 @@ pipeline {
                            }   
                       }        
                   }
-          }
-        }
-  }
+          
 }
